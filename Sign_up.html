@@ -21,6 +21,11 @@
 		box-sizing: border-box;
 		border: none;
 	}
+	#passwarning {
+		font-family: Segoe UI;
+		font-weight: normal;
+		font-size: 30px;
+	}
 	#Sign_Up {
 		position: absolute;
 		width: 1920px;
@@ -3438,6 +3443,20 @@ window.application = new Application();
 </script>
 </head>
 <body>
+<script>
+			function checkPassword() {
+				if(document.getElementById("pass").value !== document.getElementById("pass2").value)
+				{
+					document.getElementById("passwarning").style.color = "red";
+					document.getElementById("passwarning").innerHTML = "Passwords do not match";
+				}
+				else
+				{
+					document.getElementById("passwarning").style.color = "green"
+					document.getElementById("passwarning").innerHTML = "Passwords match";
+				}
+			}
+</script>
 <div id="Sign_Up">
 	<svg class="Path_1" viewBox="0 0 208 110.033">
 		<path id="Path_1" d="M 0 0 L 112.0829010009766 0 L 208 0 L 208 110.0328826904297 L 0 110.0328826904297 L 0 0 Z">
@@ -3522,10 +3541,10 @@ window.application = new Application();
 		<input name="fname" class="Fields" type="text" placeholder="first name" required>
 	</div>
 	<div id="Password">
-		<input name="pass" class="Fields" type="password" placeholder="password" required>
+		<input id="pass" name="pass" class="Fields" type="password" placeholder="password" required>
 	</div>
 	<div id="Re-Enter_Password__">
-		<input name="pass2" class="Fields" type="password" placeholder="re-enter password" required>
+		<input id="pass2" name="pass2" class="Fields" type="password" onkeyup="checkPassword();" placeholder="re-enter password" required>
 	</div>
 	<svg class="Rectangle_17">
 		<rect id="Rectangle_17" rx="0" ry="0" x="0" y="0" width="282" height="81">
@@ -3537,6 +3556,9 @@ window.application = new Application();
 	</form>
 	<div id="Already_part_of_Food_Scout_Log">
 		<span>Already part of Food Scout? Log in </span><span style="font-style:normal;font-weight:bold;">here!  </span>
+	</div>
+	<div id="passwarning" style="left: 150px; top: 1070px; position: absolute;">
+		<span id="passwarning" style="left: 150px; top: 1070px; overflow: visible; position: absolute;">TESTING</span>
 	</div>
 	<div id="">
 		<span></span>
