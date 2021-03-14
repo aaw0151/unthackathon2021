@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			function checkPassword() {
+				if(document.getElementById("pass").value !== document.getElementById("pass2").value)
+				{
+					document.getElementById("passwarning").style.color = "red";
+					document.getElementById("passwarning").innerHTML = "Passwords do not match";
+				}
+				else
+				{
+					document.getElementById("passwarning").style.color = "green"
+					document.getElementById("passwarning").innerHTML = "Passwords match";
+				}
+			}
+		</script>
+		<div class="sign-up-form">
+			<form>
+				<label for="fname">First Name:</label>
+				<input type="text" pattern="[A-Za-z]+" id="fname" name="fname" autofocus required><br><br>
+				<label for="lname">Last Name: </label>
+				<input type="text" pattern="[A-Za-z]+" id="lname" name="lname" required><br><br>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required><br><br>
+				<label for="pass">Password:       </label>
+				<input type="password" id="pass" name="pass" required><br><br>
+				<label for="pass2">Retype Password:</label>
+				<input type="password" id="pass2" name="pass2" onkeyup="checkPassword();" required><span id="passwarning"></span><br><br>
+				<input type="submit" value="Sign-up">
+			</form>
+		</div>
+	</body>
+</html>

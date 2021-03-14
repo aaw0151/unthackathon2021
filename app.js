@@ -3,13 +3,23 @@ const http = require('http');
 const fs = require('fs');
 const mysql = require('mysql');
 const url = require('url');
-const express = require('express');
-const bodyParser = require('body-parser');
-const multer = require('multer');
-const upload = multer();
-const app = express();
+var express = require('express');
+var bodyParser = require('body-parser');
+var app = express();
+var formidable = require('express-formidable')
+var multer = require('multer');
+var upload = multer();
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
+app.use(bodyParser.json());
+app.use(bodyParser.raw());
+app.use(formidable());
+app.use(upload.array());
+app.use(express.static('public'));
 const hostname = "127.0.0.1";
 const port = 8000;
+
 
 //mysql Information
 var mysqlcon = mysql.createConnection({
@@ -23,45 +33,43 @@ mysqlcon.connect(function(err){
 	console.log("mySQL Database Connected");
 });
 
+
 //Main server
 const server = http.createServer(function (req, res) {
 	//for favicon
-	function ignoreFavicon(req, res, next) {
+	function ignoreFavicon(request, response, next) {
 		if (req.originalUrl.includes('favicon.ico')) {
-			res.status(204).end()
+			response.status(204).end()
 		}
 		next();
 	}
 	app.use(ignoreFavicon);
 
+	//query parameters
 	var query = url.parse(req.url, true);
 	var htmlFile = "./index.html";
 	if(query.pathname != "/") {
 		htmlFile = "." + query.pathname + ".html";
 	}
-	if(query.pathname == "/sendlogin")
+
+	//file system
+	if(query.pathname == "/send-login") //send login via POST
 	{
 		console.log("im here!");
-		app.get('/', function(req, res){
-			res.render('form');
-		});
-		app.use(bodyParser.json());
-		app.use(bodyParser.urlencoded({extended: true}));
-		app.use(upload.array());
-		app.use(express.static('public'));
-		app.post('/', (req, res) => {
-			console.log('body=' + req.body);
+		app.post('/send-login', (request, result) => {
+			console.log("anything");
+			console.log('body=' + request.body);	
 		});
 		res.end();
 	}
-	else
+	else //all other pages that load HTML
 	{
-		fs.readFile(htmlFile, function(err, data) {
+		fs.readFile(htmlFile, function(err, data) { //load HTML file
 			if(err) {
 				res.writeHead(404, {'Content-Type': 'text/html'});
 				return res.end("404 Page Not Found");
 			}
-			if(htmlFile == "./index.html")
+			if(htmlFile == "./index.html") //homepage
 			{
 				res.writeHead(200, {'Content-Type': 'text/html'});
 				res.write(data); //writing index.html
@@ -90,7 +98,7 @@ const server = http.createServer(function (req, res) {
 					res.end();
 				});
 			}
-			else if(htmlFile == "./submit.html")
+			else if(htmlFile == "./submit.html") //submit location
 			{
 				var queryData = query.query;
 				//validating form submission
@@ -126,7 +134,7 @@ const server = http.createServer(function (req, res) {
 					res.write(data);
 				}
 			}
-			else if(htmlFile == "./items.html")
+			else if(htmlFile == "./items.html") //items list page
 			{
 				res.writeHead(200, {'Content-Type': 'text/html'});
 				mysqlcon.query("SELECT * FROM locations", function(err, result, fields) {
@@ -149,13 +157,25 @@ const server = http.createServer(function (req, res) {
 					res.end();
 				});
 			}
-			else if(htmlFile == "./login.html")
+			else if(htmlFile == "./login.html") //login page
 			{
 				res.writeHead(200, {'Content-Type': 'text/html'});
 				res.write(data);
 				res.end();
 			}
-			else
+			else if(htmlFile == "./aboutus.html") //about us page
+			{
+				res.writeHead(200, {'Content-Type': 'text/html'});
+				res.write(data);
+				res.end();
+			}
+			else if(htmlFile == "./sign-up.html") //signup page
+			{
+				res.writeHead(200, {'Content-Type': 'text/html'});
+				res.write(data);
+				res.end();
+			}
+			else //other nonexistant pages
 			{
 				res.end();
 			}
