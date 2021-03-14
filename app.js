@@ -147,16 +147,19 @@ const server = http.createServer(function (req, res) {
 				});
 			});
 		}
-		else if(htmlFile == "./login.html") //login page
+		else if(htmlFile == "./Log_In.html") //login page
 		{
 			res.writeHead(200, {'Content-Type': 'text/html'});
 			res.write(data);
 			var queryData = query.query;
 			if(("login_failed" in queryData)) //checking if previous login failed
 			{
-				res.write("<h3 style='color: red'>Invalid username or password.</h3>");
+				res.write("<h3 id='ErrorMessage'>Invalid username or password.</h3>");
 			}
-			res.end();
+			fs.readFile("./Log_In2", function(err2, data2) {
+				res.write(data2);
+				res.end();
+			});
 		}
 		else if(htmlFile == "./send-login.html")
 		{
@@ -191,7 +194,7 @@ const server = http.createServer(function (req, res) {
 				}
 				else //if account wasn't found, redirect back to login page with flag
 				{
-					res.writeHead(301, {Location: 'http://localhost:8000/login?login_failed=true'});
+					res.writeHead(301, {Location: 'http://localhost:8000/Log_In.html?login_failed=true'});
 				}
 				res.end();
 			});

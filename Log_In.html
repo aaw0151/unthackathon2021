@@ -21,16 +21,32 @@
 		box-sizing: border-box;
 		border: none;
 	}
+	.ErrorMessage {
+		
+	}
 	#Log_In {
-		position: absolute;
-		width: 1920px;
-		height: 1505px;
+		left: 1586px;
+		top: 81px;
+		width: 150px;
 		background-color: rgba(255,255,255,1);
 		overflow: hidden;
 		--web-view-name: Log In;
 		--web-view-id: Log_In;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
+	}
+	.Log_In_Button {
+		left: 1586px;
+		top: 81px;
+		width: 150px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 30px;
+		color: rgba(2555,255,255,1);
+		background-color: rgba(9,8,8,1);
 	}
 	@keyframes fadein {
 	
@@ -75,7 +91,7 @@
 		color: rgba(112,112,112,1);
 	}
 	#Rectangle_7 {
-		fill: rgba(238,238,238,1);
+		fill: rgba(255,255,255,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
 		stroke-linejoin: miter;
@@ -96,17 +112,16 @@
 		top: 619px;
 		position: absolute;
 		overflow: visible;
-		width: 136px;
+		width: 950px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Segoe UI;
 		font-style: normal;
-		font-weight: bold;
 		font-size: 40px;
 		color: rgba(112,112,112,1);
 	}
 	#Rectangle_8 {
-		fill: rgba(238,238,238,1);
+		fill: rgba(255,255,255,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
 		stroke-linejoin: miter;
@@ -127,12 +142,11 @@
 		top: 764px;
 		position: absolute;
 		overflow: visible;
-		width: 189px;
+		width: 950px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Segoe UI;
 		font-style: normal;
-		font-weight: bold;
 		font-size: 40px;
 		color: rgba(112,112,112,1);
 	}
@@ -3287,77 +3301,14 @@ window.application = new Application();
 		<span><img src="https://i.ibb.co/fk5Ph4m/logo.jpg"/></span>
 	</div>
 	<svg class="Rectangle_7">
-		<rect id="Rectangle_7" rx="0" ry="0" x="0" y="0" width="1022" height="85">
-		</rect>
+		<rect id="Rectangle_7" rx="0" ry="0" x="0" y="0" width="1022" height="85"></rect>
 	</svg>
+	<form method="GET" action="./send-login.html">
 	<div id="Email__">
 		<span>Email: </span><span style="font-style:italic;font-weight:normal;"> </span>
 	</div>
+	<input width="200" type="text" name="email" id="Email__" placeholder="email">
 	<svg class="Rectangle_8">
 		<rect id="Rectangle_8" rx="0" ry="0" x="0" y="0" width="1022" height="85">
 		</rect>
 	</svg>
-	<div id="Password">
-		<span>Password:</span>
-	</div>
-	<div id="HughJassgmailcom">
-		<span>HughJass@gmail.com</span>
-	</div>
-	<div id="Log_in_to_Food_Scout">
-		<span>Log in to Food Scout</span>
-	</div>
-	<div onclick="application.goToTargetView(event)" id="New_to_Food_Scout__Sign_up_her">
-		<span>New to Food Scout?  Sign up</span><span style="font-style:normal;font-weight:bold;"> here!</span>
-	</div>
-	<svg class="Rectangle_10">
-		<rect id="Rectangle_10" rx="35" ry="35" x="0" y="0" width="178" height="70">
-		</rect>
-	</svg>
-	<svg class="Rectangle_11">
-		<rect id="Rectangle_11" rx="35" ry="35" x="0" y="0" width="178" height="70">
-		</rect>
-	</svg>
-	<div onclick="window.location.href='Sign_up.html'" id="Sign_up">
-		<span>Sign up</span>
-	</div>
-	<div id="Log_in_">
-		<span>Log in </span>
-	</div>
-	<svg class="Line_18" viewBox="0 0 1634 1">
-		<path id="Line_18" d="M 0 0 L 1634 0">
-		</path>
-	</svg>
-	<div onclick="application.goToTargetView(event)" id="Home">
-		<span>Home</span>
-	</div>
-	<div onclick="application.goToTargetView(event)" id="Food_Bank_Locator">
-		<span>Food Bank Locator</span>
-	</div>
-	<div onclick="application.goToTargetView(event)" id="Items_Needed_">
-		<span>Items Needed</span><br>
-	</div>
-	<div onclick="application.goToTargetView(event)" id="About_us_">
-		<span>About us</span><br>
-	</div>
-	<svg class="Line_19" viewBox="0 0 1 53">
-		<path id="Line_19" d="M 0 0 L 0 53">
-		</path>
-	</svg>
-	<svg class="Line_20" viewBox="0 0 1 53">
-		<path id="Line_20" d="M 0 0 L 0 53">
-		</path>
-	</svg>
-	<svg class="Line_21" viewBox="0 0 1 53">
-		<path id="Line_21" d="M 0 0 L 0 53">
-		</path>
-	</svg>
-	<svg class="Rectangle_18">
-		<rect id="Rectangle_18" rx="0" ry="0" x="0" y="0" width="282" height="81">
-		</rect>
-	</svg>
-	<div id="Log_In_">
-		<span>Log In</span>
-	</div>
-</div>
-</body>
-</html>
