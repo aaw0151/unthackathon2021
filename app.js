@@ -3,6 +3,8 @@ const http = require('http');
 const fs = require('fs');
 const mysql = require('mysql');
 const url = require('url');
+const crypto = require('crypto');
+const secret = 'heybequiet657';
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
@@ -172,10 +174,13 @@ const server = http.createServer(function (req, res) {
 				}
 				result = JSON.stringify(result); //converting object to string
 				result = JSON.parse(result); //converting string to array of objects
+				var hmac = crypto.createHmac('sha256', secret).update(queryData.pass).digest('hex');
+				queryData['pass'] = ""; //removing password from memory
+				queryData['hashedpass'] = hmac;
 				var accountFound = false;
 				for(let i = 0; i < result.length; i++) //checking if account exists
 				{
-					if((result[i].email === queryData.email) && (result[i].password === queryData.pass)) {
+					if((result[i].email === queryData.email) && (result[i].password === queryData.hashedpass)) {
 						accountFound = true;
 						break;
 					}
@@ -207,9 +212,12 @@ const server = http.createServer(function (req, res) {
 		else if(htmlFile == "./send-sign-up.html") //submit
 		{
 			var queryData = query.query;
+			var hmac = crypto.createHmac('sha256', secret).update(queryData.pass).digest('hex'); //hash password
+			queryData['pass'] = ""; //remove pass from memory
+			queryData['hashedpass'] = hmac;
 			if(Object.keys(queryData).length != 0) //if there has not been a submission yet
 			{
-				var sqlquery = `INSERT INTO users (first_name, last_name, email, password) VALUES ('${queryData.fname}', '${queryData.lname}', '${queryData.email}', '${queryData.pass}')`; //insert into sql database
+				var sqlquery = `INSERT INTO users (first_name, last_name, email, password) VALUES ('${queryData.fname}', '${queryData.lname}', '${queryData.email}', '${queryData.hashedpass}')`; //insert into sql database
 				if(!("fname" in queryData) || !("lname" in queryData) || !("email" in queryData) || !("pass" in queryData) || !("pass2" in queryData)) //error in submission
 				{
 					res.writeHead(400, {'Content-Type': 'text/html'});
