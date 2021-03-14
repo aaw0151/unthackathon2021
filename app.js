@@ -137,8 +137,8 @@ const server = http.createServer(function (req, res) {
 					let day = (result[i].date).slice(5, 7);         //
 					let month = (result[i].date).slice(8, 10);      //
 
-					wholePage += ("<div id='Location_Text'><h3 class='results'>" + result[i].name + "  "); //location data
-					wholePage += (result[i].address + "  ");                                               //
+					wholePage += ("<div class='Location_Text'><h3 class='results'>" + result[i].name + "</h3><h3 class='results'>"); //location data
+					wholePage += (result[i].address + "</h3><h3 class='results'>");                                               //
 					wholePage += (result[i].food + "</h3></div>");                                         //
 				}
 				wholePage += "</div>";
@@ -202,7 +202,7 @@ const server = http.createServer(function (req, res) {
 				res.end();
 			});
 		}
-		else if(htmlFile == "./aboutus.html") //about us page
+		else if(htmlFile == "./About_Us.html") //about us page
 		{
 			res.writeHead(200, {'Content-Type': 'text/html'});
 			res.write(data);

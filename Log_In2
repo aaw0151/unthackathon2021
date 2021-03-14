@@ -57,6 +57,18 @@
 		<input type="submit" value="Log In" class="Log_In_Button">
 	</div>
 	</form>
+	<script>
+			//Show or hide password
+			function showPass() {
+				var input = document.getElementById("Password");
+				if(input.type === "password")
+					input.type = "text";
+				else
+					input.type = "password";
+			}
+	</script>
+	<!--<label style="left: 150px; top: 860px; position: absolute; font-family: Segoe UI; font-style: normal; font-size: 20px; overflow: visible; width: 200px;" for="showPass">Show Password</label>-->
+	<!--<input style="left: 150px; top: 860px; position: absolute; overflow: visible; width: 381px;" type="checkbox" onclick="showPass() name=showPass"><p>-->
 </div>
 </body>
 </html>
