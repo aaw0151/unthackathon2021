@@ -60,13 +60,18 @@ const server = http.createServer(function (req, res) {
 			res.writeHead(404, {'Content-Type': 'text/html'});
 			return res.end("404 Page Not Found");
 		}
-		if(htmlFile == "./index.html") //homepage
+		if(htmlFile == "./index.html") ///homepage
 		{
 			res.writeHead(200, {'Content-Type': 'text/html'});
 			res.write(data); //writing index.html
+			res.end();
+		}
+		else if(htmlFile == "./locations.html") //locations page
+		{
+			res.writeHead(200, {'Content-Type': 'text/html'});
+			res.write(data); //writing locations.html
 
-			//Querying mysql Database
-			mysqlcon.query("SELECT * FROM locations", function(err, result, fields) { 
+			mysqlcon.query("SELECT * FROM locations", function(err, result, fields) {
 				if(err) throw err;
 				result = JSON.stringify(result); //converting object to string
 				result = JSON.parse(result); //converting string to array of objects
