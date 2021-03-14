@@ -16,9 +16,12 @@
 					document.getElementById("passwarning").innerHTML = "Passwords match";
 				}
 			}
+			function hashPass() {
+				
+			}
 		</script>
 		<div class="sign-up-form">
-			<form>
+			<form action="/send-sign-up" method="GET">
 				<label for="fname">First Name:</label>
 				<input type="text" pattern="[A-Za-z]+" id="fname" name="fname" autofocus required><br><br>
 				<label for="lname">Last Name: </label>
