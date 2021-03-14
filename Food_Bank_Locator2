@@ -2,7 +2,7 @@
 		<span>Area Code: </span><span style="font-style:italic;font-weight:normal;"> </span><span style="font-style:italic;font-weight:normal;color:rgba(183,183,183,1);">00000</span>
 	</div>
 	<form action="" method="GET">
-	<input id="Area_Code__00000" style="fill:rgba(238,238,238,1);font-weight:normal;font-weight:normal;color:rgba(183,183,183,1);"" type="text" name="zip" placeholder="Zipcode:"><br>
+	<input id="Area_Code__00000" style="fill:rgba(238,238,238,1);opacity-fill: 0;font-weight:normal;font-weight:normal;color:rgba(183,183,183,1);"" type="text" name="zip" placeholder="Zipcode:"><br>
 	</form>
 </div>
 </body>
