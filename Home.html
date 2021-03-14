@@ -4,16 +4,16 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Items Needed</title>
+<title>Home</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: Items Needed;
-		--web-view-id: Items_Needed;
+		--web-view-name: Home;
+		--web-view-id: Home;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
-		--web-view-ids: Items_Needed;
+		--web-view-ids: Home;
 	}
 	* {
 		margin: 0;
@@ -21,14 +21,14 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Items_Needed {
+	#Home {
 		position: absolute;
 		width: 1920px;
 		height: 1505px;
 		background-color: rgba(255,255,255,1);
 		overflow: hidden;
-		--web-view-name: Items Needed;
-		--web-view-id: Items_Needed;
+		--web-view-name: Home;
+		--web-view-id: Home;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 	}
@@ -56,8 +56,8 @@
 		position: absolute;
 		width: 208px;
 		height: 110.033px;
-		left: 143px;
-		top: 38px;
+		left: 78px;
+		top: 54.967px;
 		transform: matrix(1,0,0,1,0,0);
 	}
 	#logo {
@@ -128,7 +128,7 @@
 	}
 	#Log_in_ {
 		left: 1586px;
-		top: 81px;
+		top: 79px;
 		position: absolute;
 		overflow: visible;
 		width: 96px;
@@ -162,23 +162,19 @@
 		top: 289px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Home {
+	#Home_q {
 		left: 250px;
 		top: 236px;
 		position: absolute;
 		overflow: visible;
 		width: 114px;
 		white-space: nowrap;
-		--web-animation: fadein 0.3s ease-out;
-		--web-action-type: page;
-		--web-action-target: Home.html;
-		cursor: pointer;
 		text-align: left;
 		font-family: Segoe UI;
 		font-style: normal;
 		font-weight: bold;
 		font-size: 40px;
-		color: rgba(112,112,112,1);
+		color: rgba(217,24,24,1);
 	}
 	#Food_Bank_Locator {
 		left: 520px;
@@ -205,12 +201,16 @@
 		overflow: visible;
 		width: 262px;
 		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Items_Needed.html;
+		cursor: pointer;
 		text-align: left;
 		font-family: Segoe UI;
 		font-style: normal;
 		font-weight: bold;
 		font-size: 40px;
-		color: rgba(217,24,24,1);
+		color: rgba(112,112,112,1);
 	}
 	#About_us_ {
 		left: 1350px;
@@ -248,8 +248,8 @@
 		top: 236px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Line_3 {
-		fill: transparent;
+	#Path_2 {
+		fill: rgba(0,0,0,0);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
 		stroke-linejoin: miter;
@@ -257,7 +257,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_3 {
+	.Path_2 {
 		overflow: visible;
 		position: absolute;
 		width: 1px;
@@ -266,7 +266,7 @@
 		top: 232px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Line_4 {
+	#Line_7 {
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -275,7 +275,25 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_4 {
+	.Line_7 {
+		overflow: visible;
+		position: absolute;
+		width: 1473px;
+		height: 1px;
+		left: 86px;
+		top: 289px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Path_3 {
+		fill: rgba(0,0,0,0);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Path_3 {
 		overflow: visible;
 		position: absolute;
 		width: 1px;
@@ -284,8 +302,8 @@
 		top: 232px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Rectangle_6 {
-		fill: rgba(255,255,255,1);
+	#Rectangle_3 {
+		fill: rgba(6,6,6,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
 		stroke-linejoin: miter;
@@ -293,30 +311,65 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_6 {
+	.Rectangle_3 {
 		position: absolute;
 		overflow: visible;
 		width: 1634px;
-		height: 744px;
+		height: 426px;
 		left: 70px;
-		top: 473px;
+		top: 381px;
 	}
-	#list_of_Items_needed_by_Food_b {
+	#Stock_photo {
+		background-image: url(https://horticulture.ucdavis.edu/sites/g/files/dgvnsk1816/files/impact_stories/fresh-produce-quality-vegetables-825w.png);
+		background-size: cover;
+		left: 70px;
+		top: 381px;
+		position: absolute;
+		overflow: visible;
+		width: 1634px;
+		height: 426px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 80px;
+		color: rgba(112,112,112,1);
+	}
+	#Line_10 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_10 {
+		overflow: visible;
+		position: absolute;
+		width: 1634px;
+		height: 1px;
+		left: 70px;
+		top: 903px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Our_Mission {
 		left: 75px;
-		top: 406px;
+		top: 823px;
 		position: absolute;
 		overflow: visible;
-		width: 820px;
+		width: 341px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Segoe UI;
 		font-style: normal;
 		font-weight: bold;
-		font-size: 50px;
+		font-size: 60px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_11 {
-		fill: transparent;
+	#Rectangle_4 {
+		fill: rgba(0,0,0,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
 		stroke-linejoin: miter;
@@ -324,91 +377,26 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_11 {
-		overflow: visible;
+	.Rectangle_4 {
 		position: absolute;
-		width: 1634.001px;
-		height: 3px;
+		overflow: visible;
+		width: 1634px;
+		height: 369px;
 		left: 70px;
-		top: 548px;
-		transform: matrix(1,0,0,1,0,0);
+		top: 940px;
 	}
-	#Line_12 {
-		fill: transparent;
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Line_12 {
-		overflow: visible;
-		position: absolute;
-		width: 1px;
-		height: 75px;
-		left: 559px;
-		top: 475px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Food_Bank {
-		left: 151px;
-		top: 486px;
+	#Paragraph_text {
+		left: 677px;
+		top: 1085px;
 		position: absolute;
 		overflow: visible;
-		width: 201px;
+		width: 420px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Segoe UI;
 		font-style: normal;
 		font-weight: bold;
-		font-size: 40px;
-		color: rgba(112,112,112,1);
-	}
-	#Location {
-		left: 576px;
-		top: 486px;
-		position: absolute;
-		overflow: visible;
-		width: 162px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 40px;
-		color: rgba(112,112,112,1);
-	}
-	#Line_13 {
-		fill: transparent;
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Line_13 {
-		overflow: visible;
-		position: absolute;
-		width: 1px;
-		height: 73px;
-		left: 1183px;
-		top: 475px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Items_Needed_ba {
-		left: 1204px;
-		top: 485px;
-		position: absolute;
-		overflow: visible;
-		width: 262px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 40px;
+		font-size: 60px;
 		color: rgba(112,112,112,1);
 	}
 </style>
@@ -3252,13 +3240,13 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="Items_Needed">
+<div id="Home">
 	<svg class="Path_1" viewBox="0 0 208 110.033">
 		<path id="Path_1" d="M 0 0 L 112.0829010009766 0 L 208 0 L 208 110.0328826904297 L 0 110.0328826904297 L 0 0 Z">
 		</path>
 	</svg>
 	<div id="logo">
-		<span><img src="logo.png"/></span>
+		<span><img src="https://i.ibb.co/fk5Ph4m/logo.jpg"/></span>
 	</div>
 	<svg class="Rectangle_1">
 		<rect id="Rectangle_1" rx="35" ry="35" x="0" y="0" width="178" height="70">
@@ -3274,17 +3262,17 @@ window.application = new Application();
 	<div onclick="window.location.href='Log_In.html'" id="Log_in_">
 		<span>Log in </span>
 	</div>
-	<svg class="Line_1" viewBox="0 0 1634 1">
-		<path id="Line_1" d="M 0 0 L 1634 0">
+	<svg class="Line_1" viewBox="0 0 1473 1">
+		<path id="Line_1" d="M 0 0 L 1473 0">
 		</path>
 	</svg>
-	<div onclick="application.goToTargetView(event)" id="Home">
+	<div id="Home_q">
 		<span>Home</span>
 	</div>
 	<div onclick="application.goToTargetView(event)" id="Food_Bank_Locator">
 		<span>Food Bank Locator</span>
 	</div>
-	<div id="Items_Needed_">
+	<div onclick="application.goToTargetView(event)" id="Items_Needed_">
 		<span>Items Needed</span><br>
 	</div>
 	<div onclick="application.goToTargetView(event)" id="About_us_">
@@ -3294,41 +3282,38 @@ window.application = new Application();
 		<path id="Line_2" d="M 0 0 L 0 53">
 		</path>
 	</svg>
-	<svg class="Line_3" viewBox="0 0 1 53">
-		<path id="Line_3" d="M 0 0 L 0 53">
+	<svg class="Path_2" viewBox="0 0 1 53">
+		<path id="Path_2" d="M 0 0 L 0 21.53125 L 0 53">
 		</path>
 	</svg>
-	<svg class="Line_4" viewBox="0 0 1 53">
-		<path id="Line_4" d="M 0 0 L 0 53">
+	<svg class="Line_7" viewBox="0 0 1473 1">
+		<path id="Line_7" d="M 0 0 L 1473 0">
 		</path>
 	</svg>
-	<svg class="Rectangle_6">
-		<rect id="Rectangle_6" rx="0" ry="0" x="0" y="0" width="1634" height="744">
+	<svg class="Path_3" viewBox="0 0 1 53">
+		<path id="Path_3" d="M 0 0 L 0 27.175537109375 L 0 53">
+		</path>
+	</svg>
+	<svg class="Rectangle_3">
+		<rect id="Rectangle_3" rx="0" ry="0" x="0" y="0" width="1634" height="426">
 		</rect>
 	</svg>
-	<div id="list_of_Items_needed_by_Food_b">
-		<span>list of Items needed by Food banks</span>
+	<div id="Stock_photo">
+		
 	</div>
-	<svg class="Line_11" viewBox="0 0 1634 2">
-		<path id="Line_11" d="M 0 0 L 1634 2">
+	<svg class="Line_10" viewBox="0 0 1634 1">
+		<path id="Line_10" d="M 0 0 L 1634 0">
 		</path>
 	</svg>
-	<svg class="Line_12" viewBox="0 0 1 75">
-		<path id="Line_12" d="M 0 0 L 0 75">
-		</path>
-	</svg>
-	<div id="Food_Bank">
-		<span>Food Bank</span>
+	<div id="Our_Mission">
+		<span>Our Mission</span>
 	</div>
-	<div id="Location">
-		<span>Location</span>
-	</div>
-	<svg class="Line_13" viewBox="0 0 1 73">
-		<path id="Line_13" d="M 0 0 L 0 73">
-		</path>
+	<svg class="Rectangle_4">
+		<rect id="Rectangle_4" rx="0" ry="0" x="0" y="0" width="1634" height="369">
+		</rect>
 	</svg>
-	<div id="Items_Needed_ba">
-		<span>Items Needed</span>
+	<div id="Paragraph_text">
+		<span>Paragraph text</span>
 	</div>
 </div>
 </body>

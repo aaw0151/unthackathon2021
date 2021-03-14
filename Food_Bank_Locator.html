@@ -4,16 +4,16 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home</title>
+<title>Food Bank Locator</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: Home;
-		--web-view-id: Home;
+		--web-view-name: Food Bank Locator;
+		--web-view-id: Food_Bank_Locator;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
-		--web-view-ids: Home;
+		--web-view-ids: Food_Bank_Locator;
 	}
 	* {
 		margin: 0;
@@ -21,14 +21,14 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Home {
+	#Food_Bank_Locator {
 		position: absolute;
 		width: 1920px;
 		height: 1505px;
 		background-color: rgba(255,255,255,1);
 		overflow: hidden;
-		--web-view-name: Home;
-		--web-view-id: Home;
+		--web-view-name: Food Bank Locator;
+		--web-view-id: Food_Bank_Locator;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 	}
@@ -41,6 +41,23 @@
 			opacity: 1;
 		}
 	
+	}
+	#Rectangle_5 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_5 {
+		position: absolute;
+		overflow: visible;
+		width: 407px;
+		height: 85px;
+		left: 143px;
+		top: 391px;
 	}
 	#Path_1 {
 		fill: white;
@@ -162,12 +179,30 @@
 		top: 289px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Home_q {
+	#Home {
 		left: 250px;
 		top: 236px;
 		position: absolute;
 		overflow: visible;
 		width: 114px;
+		white-space: nowrap;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home.html;
+		cursor: pointer;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 40px;
+		color: rgba(112,112,112,1);
+	}
+	#Food_Bank_Locator_u {
+		left: 520px;
+		top: 236px;
+		position: absolute;
+		overflow: visible;
+		width: 353px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Segoe UI;
@@ -176,23 +211,41 @@
 		font-size: 40px;
 		color: rgba(217,24,24,1);
 	}
-	#Food_Bank_Locator {
-		left: 520px;
-		top: 236px;
-		position: absolute;
+	#Line_2 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_2 {
 		overflow: visible;
-		width: 353px;
-		white-space: nowrap;
-		--web-animation: fadein 0.3s ease-out;
-		--web-action-type: page;
-		--web-action-target: Food_Bank_Locator.html;
-		cursor: pointer;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 40px;
-		color: rgba(112,112,112,1);
+		position: absolute;
+		width: 1px;
+		height: 53px;
+		left: 478.5px;
+		top: 236px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_3 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_3 {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 53px;
+		left: 887px;
+		top: 232px;
+		transform: matrix(1,0,0,1,0,0);
 	}
 	#Items_Needed_ {
 		left: 965px;
@@ -230,7 +283,7 @@
 		font-size: 40px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_2 {
+	#Line_9 {
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -239,61 +292,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_2 {
-		overflow: visible;
-		position: absolute;
-		width: 1px;
-		height: 53px;
-		left: 478.5px;
-		top: 236px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Path_2 {
-		fill: rgba(0,0,0,0);
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Path_2 {
-		overflow: visible;
-		position: absolute;
-		width: 1px;
-		height: 53px;
-		left: 887px;
-		top: 232px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Line_7 {
-		fill: transparent;
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Line_7 {
-		overflow: visible;
-		position: absolute;
-		width: 1473px;
-		height: 1px;
-		left: 86px;
-		top: 289px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Path_3 {
-		fill: rgba(0,0,0,0);
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Path_3 {
+	.Line_9 {
 		overflow: visible;
 		position: absolute;
 		width: 1px;
@@ -302,101 +301,26 @@
 		top: 232px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Rectangle_3 {
-		fill: rgba(6,6,6,1);
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
+	#Image_1 {
+		position: absolute;
+		width: 906px;
+		height: 604px;
+		left: 143px;
+		top: 576px;
+		overflow: visible;
 	}
-	.Rectangle_3 {
+	#Area_Code__00000 {
+		left: 182px;
+		top: 407px;
 		position: absolute;
 		overflow: visible;
-		width: 1634px;
-		height: 426px;
-		left: 70px;
-		top: 381px;
-	}
-	#Stock_photo {
-		background-image: url(https://horticulture.ucdavis.edu/sites/g/files/dgvnsk1816/files/impact_stories/fresh-produce-quality-vegetables-825w.png);
-		background-size: cover;
-		left: 70px;
-		top: 381px;
-		position: absolute;
-		overflow: visible;
-		width: 1634px;
-		height: 426px;
+		width: 336px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Segoe UI;
 		font-style: normal;
 		font-weight: bold;
-		font-size: 80px;
-		color: rgba(112,112,112,1);
-	}
-	#Line_10 {
-		fill: transparent;
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Line_10 {
-		overflow: visible;
-		position: absolute;
-		width: 1634px;
-		height: 1px;
-		left: 70px;
-		top: 903px;
-		transform: matrix(1,0,0,1,0,0);
-	}
-	#Our_Mission {
-		left: 75px;
-		top: 823px;
-		position: absolute;
-		overflow: visible;
-		width: 341px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 60px;
-		color: rgba(112,112,112,1);
-	}
-	#Rectangle_4 {
-		fill: rgba(0,0,0,1);
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Rectangle_4 {
-		position: absolute;
-		overflow: visible;
-		width: 1634px;
-		height: 369px;
-		left: 70px;
-		top: 940px;
-	}
-	#Paragraph_text {
-		left: 677px;
-		top: 1085px;
-		position: absolute;
-		overflow: visible;
-		width: 420px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 60px;
+		font-size: 40px;
 		color: rgba(112,112,112,1);
 	}
 </style>
@@ -3240,13 +3164,16 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="Home">
+<div id="Food_Bank_Locator">
+	<svg class="Rectangle_5">
+		<<rect id="Rectangle_5" rx="0" ry="0" x="0" y="0" width="407" height="85"></rect>
+	</svg>
 	<svg class="Path_1" viewBox="0 0 208 110.033">
 		<path id="Path_1" d="M 0 0 L 112.0829010009766 0 L 208 0 L 208 110.0328826904297 L 0 110.0328826904297 L 0 0 Z">
 		</path>
 	</svg>
 	<div id="logo">
-		<span><img src="logo.png"/></span>
+		<span><img src="https://i.ibb.co/fk5Ph4m/logo.jpg"/></span>
 	</div>
 	<svg class="Rectangle_1">
 		<rect id="Rectangle_1" rx="35" ry="35" x="0" y="0" width="178" height="70">
@@ -3262,59 +3189,31 @@ window.application = new Application();
 	<div onclick="window.location.href='Log_In.html'" id="Log_in_">
 		<span>Log in </span>
 	</div>
-	<svg class="Line_1" viewBox="0 0 1473 1">
-		<path id="Line_1" d="M 0 0 L 1473 0">
+	<svg class="Line_1" viewBox="0 0 1634 1">
+		<path id="Line_1" d="M 0 0 L 1634 0">
 		</path>
 	</svg>
-	<div id="Home_q">
+	<div onclick="application.goToTargetView(event)" id="Home">
 		<span>Home</span>
 	</div>
-	<div onclick="application.goToTargetView(event)" id="Food_Bank_Locator">
+	<div id="Food_Bank_Locator_u">
 		<span>Food Bank Locator</span>
 	</div>
+	<svg class="Line_2" viewBox="0 0 1 53">
+		<path id="Line_2" d="M 0 0 L 0 53">
+		</path>
+	</svg>
+	<svg class="Line_3" viewBox="0 0 1 53">
+		<path id="Line_3" d="M 0 0 L 0 53">
+		</path>
+	</svg>
 	<div onclick="application.goToTargetView(event)" id="Items_Needed_">
 		<span>Items Needed</span><br>
 	</div>
 	<div onclick="application.goToTargetView(event)" id="About_us_">
 		<span>About us</span><br>
 	</div>
-	<svg class="Line_2" viewBox="0 0 1 53">
-		<path id="Line_2" d="M 0 0 L 0 53">
+	<svg class="Line_9" viewBox="0 0 1 53">
+		<path id="Line_9" d="M 0 0 L 0 53">
 		</path>
 	</svg>
-	<svg class="Path_2" viewBox="0 0 1 53">
-		<path id="Path_2" d="M 0 0 L 0 21.53125 L 0 53">
-		</path>
-	</svg>
-	<svg class="Line_7" viewBox="0 0 1473 1">
-		<path id="Line_7" d="M 0 0 L 1473 0">
-		</path>
-	</svg>
-	<svg class="Path_3" viewBox="0 0 1 53">
-		<path id="Path_3" d="M 0 0 L 0 27.175537109375 L 0 53">
-		</path>
-	</svg>
-	<svg class="Rectangle_3">
-		<rect id="Rectangle_3" rx="0" ry="0" x="0" y="0" width="1634" height="426">
-		</rect>
-	</svg>
-	<div id="Stock_photo">
-		
-	</div>
-	<svg class="Line_10" viewBox="0 0 1634 1">
-		<path id="Line_10" d="M 0 0 L 1634 0">
-		</path>
-	</svg>
-	<div id="Our_Mission">
-		<span>Our Mission</span>
-	</div>
-	<svg class="Rectangle_4">
-		<rect id="Rectangle_4" rx="0" ry="0" x="0" y="0" width="1634" height="369">
-		</rect>
-	</svg>
-	<div id="Paragraph_text">
-		<span>Paragraph text</span>
-	</div>
-</div>
-</body>
-</html>

@@ -50,9 +50,9 @@ const server = http.createServer(function (req, res) {
 
 	//query parameters
 	var query = url.parse(req.url, true);
-	var htmlFile = "./index.html";
+	var htmlFile = "./Home.html";
 	if(query.pathname != "/") {
-		htmlFile = "." + query.pathname + ".html";
+		htmlFile = "." + query.pathname;
 	}
 
 	//file system
@@ -61,37 +61,24 @@ const server = http.createServer(function (req, res) {
 			res.writeHead(404, {'Content-Type': 'text/html'});
 			return res.end("404 Page Not Found");
 		}
-		if(htmlFile == "./index.html") ///homepage
+		if(htmlFile == "./Home.html") ///homepage
 		{
 			res.writeHead(200, {'Content-Type': 'text/html'});
 			res.write(data); //writing index.html
 			res.end();
 		}
-		else if(htmlFile == "./locations.html") //locations page
+		else if(htmlFile == "./Food_Bank_Locator.html") //locations page
 		{
 			res.writeHead(200, {'Content-Type': 'text/html'});
-			res.write(data); //writing locations.html
-
-			mysqlcon.query("SELECT * FROM locations", function(err, result, fields) {
-				if(err) throw err;
-				result = JSON.stringify(result); //converting object to string
-				result = JSON.parse(result); //converting string to array of objects
-				res.write("<div class='location_list'>");
-				for(var i = 0; i < result.length; i++) //looping through all rows in table
-				{
-					result[i].date = (result[i].date).slice(0, 10); //spliting up date
-					let year = (result[i].date).slice(0, 4);        //
-					let day = (result[i].date).slice(5, 7);         //
-					let month = (result[i].date).slice(8, 10);      //
-
-					res.write("<div class='location'><h3 class='results'><strong>Name:</strong> " + result[i].name + "</h3>");         //location data
-					res.write("<h3 class='results'><strong>Location:</strong> " + result[i].address + "</h3>");                        //
-					res.write("<h3 class='results'><strong>People Needed:</strong> " + result[i].numpeople + "</h3>");                 //
-					res.write("<h3 class='results'><strong>Food Needed:</strong> " + result[i].food + "</h3>");                        //
-					res.write("<h3 class='results'><strong>Phone Number:</strong> " + result[i].phone + "</h3>");                      //
-					res.write("<h3 class='results'><strong>Date:</strong> " + month + "/" + day + "/" + year + "</h3></div><br><br>"); //
-				}
-				res.write("</div>")
+			var queryData = query.query;
+			if(!("zip" in queryData)) //if zip not included, default to Denton
+				queryData['zip'] = "Denton, TX";
+			var wholePage = data;
+			wholePage += `<iframe id="Image_1"width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=${google_api_key}&q=${queryData.zip}"> </iframe>`; //add google maps embed api
+			fs.readFile("./Food_Bank_Locator2", function(err2, data2) {
+				if(err2) throw err;
+				wholePage += data2;
+				res.write(wholePage);
 				res.end();
 			});
 		}
@@ -131,14 +118,15 @@ const server = http.createServer(function (req, res) {
 				res.write(data);
 			}
 		}
-		else if(htmlFile == "./items.html") //items list page
+		else if(htmlFile == "./Items_Needed.html") //items list page
 		{
 			res.writeHead(200, {'Content-Type': 'text/html'});
+			var wholePage = data;
 			mysqlcon.query("SELECT * FROM locations", function(err, result, fields) {
 				if(err) throw err;
 				result = JSON.stringify(result); //converting object to string
 				result = JSON.parse(result); //converting string to array of objects
-				res.write("<div class='location_list'>");
+				wholePage += ("<div class='Rectangle_6'><br><br><br><br><br>");
 				for(var i = 0; i < result.length; i++) //looping through all rows in table
 				{
 					result[i].date = (result[i].date).slice(0, 10); //spliting up date
@@ -146,12 +134,17 @@ const server = http.createServer(function (req, res) {
 					let day = (result[i].date).slice(5, 7);         //
 					let month = (result[i].date).slice(8, 10);      //
 
-					res.write("<div class='location_food'><h3 class='results'><strong>Name:</strong> " + result[i].name);         //location data
-					res.write("<strong>  Location:</strong> " + result[i].address);                        //
-					res.write("<strong>  Food Needed:</strong> " + result[i].food + "</h3></div>");                        //
+					wholePage += ("<div id='Location_Text'><h3 class='results'>" + result[i].name + "  "); //location data
+					wholePage += (result[i].address + "  ");                                               //
+					wholePage += (result[i].food + "</h3></div>");                                         //
 				}
-				res.write("</div>")
-				res.end();
+				wholePage += "</div>";
+				fs.readFile("./Items_Needed2", function(err2, data2) {
+					if(err2) throw err2;
+					wholePage += data2;
+					res.write(wholePage);
+					res.end();
+				});
 			});
 		}
 		else if(htmlFile == "./login.html") //login page
