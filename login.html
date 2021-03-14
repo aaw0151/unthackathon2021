@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Food Scout</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="havicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+	</head>
+	<body>
+		<script>
+			function showPass() {
+				var input = document.getElementById("pass");
+				if(input.type === "password")
+					input.type = "text";
+				else
+					input.type = "password";
+			}
+		</script>
+		<form action="/sendlogin" method="POST">
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email"><br><br>
+			<label for="email">Password:</label>
+			<input type="password" id="pass" name="pass"><br><br>
+			<label for="showPass">Show Password</label>
+			<input type="checkbox" onclick="showPass()"><p>
+			<input type="submit" value="Login">
+		</form>
+	</body>
+</html>
