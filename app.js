@@ -77,7 +77,7 @@ const server = http.createServer(function (req, res) {
 			if(!("zip" in queryData)) //if zip not included, default to Denton
 				queryData['zip'] = "Denton, TX";
 			var wholePage = data;
-			wholePage += `<iframe id="Image_1"width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=${google_api_key}&q=${queryData.zip}"> </iframe>`; //add google maps embed api
+			wholePage += `<iframe id="Image_1"width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=${google_api_key}&q=Food+Banks+near+${queryData.zip}"> </iframe>`; //add google maps embed api
 			fs.readFile("./Food_Bank_Locator2", function(err2, data2) {
 				if(err2) throw err;
 				wholePage += data2;
