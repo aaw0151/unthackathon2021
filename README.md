@@ -7,7 +7,4 @@ Run server using Node.js. Use "node app.js" to run.
 
 Contributors:
 
-Brandon Castro
-Autumn Scaife
-Leighton Solomon
-Alexander Williams
+Brandon Castro, Autumn Scaife, Leighton Solomon, Alexander Williams
