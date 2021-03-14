@@ -7,6 +7,9 @@ const crypto = require('crypto');
 const keys = require('./config');
 const google_api_key = keys.GOOGLE_MAPS_API_KEY();
 const secret = keys.CRYPTO_KEY();
+const mysql_USER = keys.mysql_USER();
+const mysql_PASS = keys.mysql_PASS();
+const mysql_DB = keys.mysql_DB();
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
@@ -27,9 +30,9 @@ const port = 8000;
 //mysql Information
 var mysqlcon = mysql.createConnection({
 	host: "localhost",
-	user: "root",
-	password: "",
-	database: "mydb"
+	user: mysql_USER,
+	password: mysql_PASS,
+	database: mysql_DB
 });
 mysqlcon.connect(function(err){
 	if(err) throw err;
@@ -205,7 +208,7 @@ const server = http.createServer(function (req, res) {
 			res.write(data);
 			res.end();
 		}
-		else if(htmlFile == "./sign-up.html") //signup page
+		else if(htmlFile == "./Sign_up.html") //signup page
 		{
 			res.writeHead(200, {'Content-Type': 'text/html'});
 			res.write(data);
@@ -233,7 +236,7 @@ const server = http.createServer(function (req, res) {
 							return res.end("400 Invalid Form Submission");
 						}
 						console.log(sqlquery);
-						res.writeHead(301, {Location: 'http://localhost:8000/'}); //redirect to homepage
+						res.writeHead(301, {Location: 'http://localhost:8000/Log_In.html'}); //redirect to homepage
 						res.end();
 					});
 				}

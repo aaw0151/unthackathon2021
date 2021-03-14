@@ -32,6 +32,28 @@
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 	}
+	.Fields {
+		width: 975px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(112,112,112,1);
+		background-color: rgba(238,238,238,1);
+	}
+	.Sign_Up_Button {
+		width: 149px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 40px;
+		color: rgba(255,255,255,1);
+		background-color: rgba(9,8,8,1);
+	}
 	@keyframes fadein {
 	
 		0% {
@@ -3485,45 +3507,38 @@ window.application = new Application();
 		<path id="Path_3" d="M 0 0 L 1022 0 L 1022 85 L 0 85 L 0 0 Z">
 		</path>
 	</svg>
+	<form method="GET" action="./send-sign-up.html">
 	<div id="Last_Name">
-		<span>Last Name:</span>
+		<input name="lname" class="Fields" type="text" placeholder="last name">
 	</div>
 	<div id="Email">
-		<span>Email:</span>
+		<input name="email" class="Fields" type="email" placeholder="email">
 	</div>
 	<div id="First_Name____">
-		<span>First Name:    </span>
+		<input name="fname" class="Fields" type="text" placeholder="first name">
 	</div>
 	<div id="Password">
-		<span>Password:</span>
+		<input name="pass" class="Fields" type="password" placeholder="password">
 	</div>
 	<div id="Re-Enter_Password__">
-		<span>Re-Enter Password:  </span>
+		<input name="pass2" class="Fields" type="password" placeholder="re-enter password">
 	</div>
 	<svg class="Rectangle_17">
 		<rect id="Rectangle_17" rx="0" ry="0" x="0" y="0" width="282" height="81">
 		</rect>
 	</svg>
 	<div id="Sign_Up_bb">
-		<span>Sign Up</span>
+		<input type="submit" value="Sign Up" class="Sign_Up_Button">
 	</div>
+	</form>
 	<div id="Already_part_of_Food_Scout_Log">
 		<span>Already part of Food Scout? Log in </span><span style="font-style:normal;font-weight:bold;">here!  </span>
 	</div>
-	<div id="John">
-		<span>John</span>
-	</div>
-	<div id="Doe">
-		<span>Doe</span>
-	</div>
-	<div id="HughJassgmailcom">
-		<span>HughJass@gmail.com</span>
-	</div>
 	<div id="">
-		<span>.</span>
+		<span></span>
 	</div>
 	<div id="_bh">
-		<span>.</span>
+		<span></span>
 	</div>
 </div>
 </body>
