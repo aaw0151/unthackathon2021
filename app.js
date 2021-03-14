@@ -4,7 +4,9 @@ const fs = require('fs');
 const mysql = require('mysql');
 const url = require('url');
 const crypto = require('crypto');
-const secret = 'heybequiet657';
+const keys = require('./config');
+const google_api_key = keys.GOOGLE_MAPS_API_KEY();
+const secret = keys.CRYPTO_KEY();
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
@@ -21,7 +23,6 @@ app.use(upload.array());
 app.use(express.static('public'));
 const hostname = "127.0.0.1";
 const port = 8000;
-
 
 //mysql Information
 var mysqlcon = mysql.createConnection({
